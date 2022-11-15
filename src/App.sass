@@ -22,25 +22,26 @@
   position: relative
   cursor: pointer
 
-.my-burger-btn:before
-  content: ''
-  position: absolute
-  top: 0
-  width: 20px
-  height: 2px
-  background-color: black
+  .my-burger-btn__span-top,
+  .my-burger-btn__span-middle,
+  .my-burger-btn__span-bottom
+    position: absolute
+    width: 24px
+    height: 2px
+    top: 0
+    left: 0
+    background: #fff
+    transform: rotate(0)
+    transition: all 0.5s
 
-.my-burger-btn span
-  position: absolute
-  top: 9px
-  width: 20px
-  height: 2px
-  background-color: black
+  .my-burger-btn__span-middle
+    transform: translateY(7px)
+  .my-burger-btn__span-bottom
+    transform: translateY(14px)
 
-.my-burger-btn:after
-  content: ''
-  position: absolute
-  bottom: 0
-  width: 20px
-  height: 2px
-  background-color: black
+  .my-burger-btn__span-top.active
+    transform: rotate(45deg) translateY(6px) translateX(6px)
+  .my-burger-btn__span-middle.active
+    display: none
+  .my-burger-btn__span-bottom.active
+    transform: rotate(-45deg) translateY(6px) translateX(-6px)
