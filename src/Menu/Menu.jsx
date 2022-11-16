@@ -1,5 +1,6 @@
 import React from 'react'
 import './Menu.sass'
+import { nanoid } from 'nanoid'
 
 const Menu = ({ header, items, menuActive, setMenuActive }) => {
   return (
@@ -9,7 +10,7 @@ const Menu = ({ header, items, menuActive, setMenuActive }) => {
         <div className='my-menu__header'>{header}</div>
         <ul className='my-ul'>
           {items.map((item) => (
-            <li className='my-li'>
+            <li className='my-li' key={nanoid()}>
               <a href={item.href} className='my-link'>{item.value}</a>
               <span className='material-icons'>{item.icon}</span>
             </li>
